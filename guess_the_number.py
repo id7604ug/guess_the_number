@@ -56,12 +56,10 @@ def check_guess(guess, secret):
 
 def main():
 
-<<<<<<< HEAD
+
     while True:
         number_times_play(guessCount)
         guess = get_guess()
-=======
->>>>>>> 3a29bbb48d4ab930141cec4960a20896c10ebfef
 
     continueGame = True
 
@@ -95,13 +93,10 @@ def main():
 
             continueGame = False
             break
-<<<<<<< HEAD
+
     print('You took ' + str(guessCount) + ' guesses') # Displays the total amount of guesses
     number_times_play(guessCount)
-=======
 
-
->>>>>>> 3a29bbb48d4ab930141cec4960a20896c10ebfef
 
 if __name__ == '__main__':
     main()
