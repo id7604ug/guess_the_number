@@ -4,6 +4,10 @@ correct = 'you guessed correctly!'
 too_low = 'too low'
 too_high = 'too high'
 
+def number_times_play(time_play):
+    '''Display the number of games the user has played'''
+    print("You have played {} game/s so far".format(time_play))
+
 
 def display_banner():
     '''Display program name in a banner'''
@@ -57,6 +61,7 @@ def main():
     secret = generate_secret(low, high)
 
     while True:
+        number_times_play(guessCount)
         guess = get_guess()
 
         result = check_guess(guess, secret)
@@ -66,6 +71,7 @@ def main():
         if result == correct:
             break
     print('You took ' + str(guessCount) + ' guesses') # Displays the total amount of guesses
+    number_times_play(guessCount)
 
 if __name__ == '__main__':
     main()
