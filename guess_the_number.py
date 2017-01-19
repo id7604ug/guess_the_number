@@ -51,21 +51,42 @@ def check_guess(guess, secret):
         return too_high
 
 def main():
-    display_banner()
-    guessCount = 0 # Counts the amount of guesses
-    (low, high) = configure_range()
-    secret = generate_secret(low, high)
 
-    while True:
-        guess = get_guess()
 
-        result = check_guess(guess, secret)
-        guessCount += 1 # Increments each time the user guesses
-        print(result)
+    continueGame = True
 
-        if result == correct:
+    while continueGame == True:
+
+        display_banner()
+        guessCount = 0 # Counts the amount of guesses
+        (low, high) = configure_range()
+        secret = generate_secret(low, high)
+
+        while True:
+
+            guess = get_guess()
+
+            result = check_guess(guess, secret)
+            guessCount += 1 # Increments each time the user guesses
+            print(result)
+
+            if result == correct:
+                break
+
+        print('You took ' + str(guessCount) + ' guesses') # Displays the total amount of guesses
+
+        playAgain = input("Do you want play again? ") # ask user to play again.
+
+        if playAgain.lower() == "y":
+
+            continueGame = True
+
+        else:
+
+            continueGame = False
             break
-    print('You took ' + str(guessCount) + ' guesses') # Displays the total amount of guesses
+
+
 
 if __name__ == '__main__':
     main()
