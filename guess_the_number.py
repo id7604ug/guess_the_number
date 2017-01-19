@@ -30,8 +30,17 @@ def check_guess(guess, secret):
         return too_high
 
 
-def main():
+def display_banner():
+    '''Display program name in a banner'''
+    msg = 'Gues the number gamef'
+    stars = '*' * len(msg)
+    print('\n', stars, '\n', msg, '\n',  stars, '\n')
 
+
+
+
+def main():
+    display_banner()
     (low, high) = configure_range()
     secret = generate_secret(low, high)
 
@@ -39,7 +48,7 @@ def main():
         guess = get_guess()
         result = check_guess(guess, secret)
         print(result)
-
+        #
         if result == correct:
             break
 
