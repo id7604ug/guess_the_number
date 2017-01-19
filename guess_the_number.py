@@ -18,7 +18,16 @@ def display_banner():
 
 def configure_range():
     '''Set the high and low values for the random number'''
-    return 1, 10
+    x = ''
+    y = ''
+    print('Select the range you would like to guess between:')
+    while True:
+        x = input('Lower: ')
+        y = input('Upper: ')
+        if x.isdigit() and y.isdigit():
+            break
+        print('Please enter two integers')
+    return int(x), int(y)
 
 
 def generate_secret(low, high):
