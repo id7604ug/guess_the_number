@@ -3,6 +3,7 @@ import random
 correct = 'you guessed correctly!'
 too_low = 'too low'
 too_high = 'too high'
+guessCount = 0 # Counts the amount of guesses
 
 
 def configure_range():
@@ -38,11 +39,12 @@ def main():
     while True:
         guess = get_guess()
         result = check_guess(guess, secret)
+        guessCount += 1 # Increments each time the user guesses
         print(result)
 
         if result == correct:
             break
-
+    print('You took ' + str(guessCount) + ' guesses') # Displays the total amount of guesses
 
 if __name__ == '__main__':
     main()
