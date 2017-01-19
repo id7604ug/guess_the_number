@@ -5,6 +5,13 @@ too_low = 'too low'
 too_high = 'too high'
 
 
+def display_banner():
+    '''Display program name in a banner'''
+    msg = "Welcome to the guess the nubmer game!!!"
+    stars = '*' * len(msg)
+    print('\n', stars, '\n', msg, '\n',  stars, '\n')
+
+
 def configure_range():
     '''Set the high and low values for the random number'''
     return 1, 10
@@ -45,9 +52,14 @@ def check_guess(guess, secret):
 
 
 
+<<<<<<< HEAD
 
 def main():
     guessCount = 0 # Counts the amount of guesses
+=======
+def main():
+    display_banner()
+>>>>>>> banner
     (low, high) = configure_range()
     secret = generate_secret(low, high)
 
@@ -57,8 +69,12 @@ def main():
         result = check_guess(guess, secret)
         guessCount += 1 # Increments each time the user guesses
         print(result)
+<<<<<<< HEAD
 
 
+=======
+        #
+>>>>>>> banner
         if result == correct:
             break
     print('You took ' + str(guessCount) + ' guesses') # Displays the total amount of guesses
